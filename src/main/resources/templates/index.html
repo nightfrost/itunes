@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>TTunes</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/"><img style="width: 35px" th:src="@{/img/thymeleaf.png}" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form action="/search" class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" name="track" placeholder="Search..." required>
+                <input type="submit" value="Search" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+
+</nav>
+
+<div class="jumbotron">
+
+    <div class="container inner-padded">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow-lg p-3 mb-5 bg-transparent rounded">
+                    <table style="align-items: center" class="table table-striped table-primary">
+                        <thead class="ttop">
+                        <tr class="table-info">
+                            <th> Tracks</th>
+                            <th> Price</th>
+                        </tr>
+                        <tbody>
+                        <tr th:each="track : ${tracks}" th:style="'font-weight:normal;'">
+                            <td th:text="${track.getName()}"></td>
+                            <td th:text="${track.getPrice()}"></td>
+                        </tr>
+                        </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-lg p-3 mb-5 bg-transparent rounded">
+                    <table style="align-items: center" class="table table-striped table-primary">
+                        <thead class="ttop">
+                        <tr class="table-info">
+                            <th> Genres</th>
+                        </tr>
+                        <tbody>
+                        <tr th:each="genre : ${genres}" th:style="'font-weight:normal;'">
+                            <td th:text="${genre.getName()}"></td>
+                        </tr>
+                        </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-lg p-3 mb-5 bg-transparent rounded">
+                    <table style="align-items: center" class="table table-striped table-primary">
+                        <thead class="ttop">
+                        <tr class="table-info">
+                            <th> Artist</th>
+                        </tr>
+                        <tbody>
+                        <tr th:each="artist : ${artists}" th:style="'font-weight:normal;'">
+                            <td th:text="${artist.getName()}"></td>
+                        </tr>
+                        </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
