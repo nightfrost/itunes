@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "41e1769a-4b5b-4f28-a3cb-07f445754822",
+		"name": "Task4 collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read all customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-island-36772.herokuapp.com/api/customers",
+					"protocol": "https",
+					"host": [
+						"lit-island-36772",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read specific customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://lit-island-36772.herokuapp.com/api/customers/60",
+					"protocol": "https",
+					"host": [
+						"lit-island-36772",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"customers",
+						"60"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an existing customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Lucas\",\r\n    \"lastName\": \"Due\",\r\n    \"country\": \"Denmark\",\r\n    \"postalCode\": \"1654\",\r\n    \"phoneNumber\": \"+45 (00) 2730-2069\",\r\n    \"email\": \"lucas.due@hotmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-island-36772.herokuapp.com/api/customers/60",
+					"protocol": "https",
+					"host": [
+						"lit-island-36772",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"customers",
+						"60"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read number of customers in each country",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://the-ttunes.herokuapp.com/api/customers/countries",
+					"protocol": "https",
+					"host": [
+						"the-ttunes",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"customers",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Spenders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lit-island-36772.herokuapp.com/api/customers/spenders",
+					"protocol": "https",
+					"host": [
+						"lit-island-36772",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"customers",
+						"spenders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Most popular genre for specific customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lit-island-36772.herokuapp.com/api/customers/12/genre",
+					"protocol": "https",
+					"host": [
+						"lit-island-36772",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"customers",
+						"12",
+						"genre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Lucas\",\r\n    \"lastName\": \"Due\",\r\n    \"country\": \"Denmark\",\r\n    \"postalCode\": \"1654\",\r\n    \"phoneNumber\": \"+45 (00) 0000-0000\",\r\n    \"email\": \"Lucas.due@hotmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-island-36772.herokuapp.com/api/customers",
+					"protocol": "https",
+					"host": [
+						"lit-island-36772",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
